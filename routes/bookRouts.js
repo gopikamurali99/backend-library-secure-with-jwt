@@ -5,7 +5,7 @@ const router = express.Router()
 // middleware that is specific to this router
 //1.get all category
 router.get('/', async(req, res) => {
-  const book=await Book.find({});
+  const book=await Book.find(req.query);
   res.json(book)
   })
 //2.get a category by id
